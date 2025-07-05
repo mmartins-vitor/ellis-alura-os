@@ -1,0 +1,12 @@
+
+services:
+  app:
+    build: .
+    container_name: ellis-app
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    volumes:
+      # Monta o diretório atual no contêiner para permitir o live-reload.
+      # Qualquer alteração no seu código local será refletida imediatamente.
+      - .:/app
